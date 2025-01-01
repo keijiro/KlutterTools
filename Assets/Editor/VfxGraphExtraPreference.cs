@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using UnityEditor;
 using UnityEngine;
 
+namespace Klak.EditorTools {
+
 [InitializeOnLoad]
 public static class VfxGraphExtraPreference
 {
@@ -69,3 +71,5 @@ class VfxGraphExtraPreferenceProvider : SettingsProvider
     public static SettingsProvider PreferenceSettingsProvider()
       => new VfxGraphExtraPreferenceProvider();
 }
+
+} // namespace Klak.EditorTools 

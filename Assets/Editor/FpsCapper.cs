@@ -4,7 +4,7 @@ using UnityEngine.LowLevel;
 using System.Linq;
 using System.Threading;
 
-namespace EditorUtils {
+namespace Klak.EditorTools {
 
 //
 // Serializable settings
@@ -122,4 +122,4 @@ sealed class FpsCapperSystem
     }
 }
 
-} // namespace EditorUtils
+} // namespace Klak.EditorTools 
