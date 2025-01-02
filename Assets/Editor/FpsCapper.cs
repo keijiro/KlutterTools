@@ -1,60 +1,56 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.LowLevel;
-using System.Linq;
 using System.Threading;
 
 namespace Klak.EditorTools {
 
-//
-// Serializable settings
-//
-[FilePath("UserSettings/FpsCapperSettings.asset",
-          FilePathAttribute.Location.ProjectFolder)]
-public sealed class FpsCapperSettings : ScriptableSingleton<FpsCapperSettings>
+// Preference accessor
+public static class FpsCapperPreference
 {
-    public bool enable = false;
-    public int targetFrameRate = 60;
-    public void Save() => Save(true);
-    void OnDisable() => Save();
+    public const string EnableKey = "FpsCapper.Enable";
+    public const string TargetFrameRateKey = "FpsCapper.TargetFrameRate";
+
+    public static bool Enable
+      { get => EditorPrefs.GetBool(EnableKey, false);
+        set => EditorPrefs.SetBool(EnableKey, value); }
+
+    public static int TargetFrameRate
+      { get => EditorPrefs.GetInt(TargetFrameRateKey, 60);
+        set => EditorPrefs.SetInt(TargetFrameRateKey, value); }
 }
 
-//
-// Settings GUI
-//
-sealed class FpsCapperSettingsProvider : SettingsProvider
+// Preference provider (GUI)
+sealed class FpsCapperPreferenceProvider : SettingsProvider
 {
-    public FpsCapperSettingsProvider()
-      : base("Project/FPS Capper", SettingsScope.Project) {}
+    public FpsCapperPreferenceProvider()
+      : base("Preferences/FPS Capper", SettingsScope.User) {}
 
     public override void OnGUI(string search)
     {
-        var settings = FpsCapperSettings.instance;
-        var enable = settings.enable;
-        var fps = settings.targetFrameRate;
-
         EditorGUI.BeginChangeCheck();
+
+        var enable = FpsCapperPreference.Enable;
+        var fps = FpsCapperPreference.TargetFrameRate;
 
         enable = EditorGUILayout.Toggle("Enable", enable);
         fps = EditorGUILayout.IntField("Target Frame Rate", fps);
 
         if (EditorGUI.EndChangeCheck())
         {
-            settings.enable = enable;
-            settings.targetFrameRate = fps;
-            settings.Save();
+            FpsCapperPreference.Enable = enable;
+            FpsCapperPreference.TargetFrameRate = fps;
         }
+
+        base.OnGUI(search);
     }
 
     [SettingsProvider]
-    public static SettingsProvider CreateCustomSettingsProvider()
-      => new FpsCapperSettingsProvider();
+    public static SettingsProvider PreferenceSettingsProvider()
+      => new FpsCapperPreferenceProvider();
 }
 
-//
-// Player loop system
-//
-[UnityEditor.InitializeOnLoad]
+// FPS Capper player-loop system
+[InitializeOnLoad]
 sealed class FpsCapperSystem
 {
     // Synchronization object
@@ -66,9 +62,7 @@ sealed class FpsCapperSystem
     // Interval thread function
     static void IntervalThread()
     {
-        _sync = new AutoResetEvent(true);
-
-        while (true)
+        for (_sync = new AutoResetEvent(true); true;)
         {
             Thread.Sleep(Mathf.Max(1, IntervalMsec));
             _sync.Set();
@@ -78,47 +72,30 @@ sealed class FpsCapperSystem
     // Custom system update function
     static void UpdateSystem()
     {
-        var cfg = FpsCapperSettings.instance;
-
         // Property update
-        IntervalMsec = 1000 / Mathf.Max(5, cfg.targetFrameRate);
+        IntervalMsec =
+          1000 / Mathf.Max(5, FpsCapperPreference.TargetFrameRate);
 
         // Rejection cases
-        if (_sync == null) return;              // Not ready
-        if (!cfg.enable) return;                // Not enabled
-        if (cfg.targetFrameRate < 1) return;    // Wrong FPS value
-        if (Time.captureDeltaTime != 0) return; // Recording
+        if (_sync == null) return;
+        if (!FpsCapperPreference.Enable) return;
+        if (FpsCapperPreference.TargetFrameRate < 1) return;
+        if (Time.captureDeltaTime != 0) return;
 
         // Synchronization with the interval thread
         _sync.WaitOne();
     }
 
-    // Static constructor (custom system installation)
+    // Static constructor
     static FpsCapperSystem()
     {
         // Interval thread launch
         new Thread(IntervalThread).Start();
 
-        // Custom system definition
-        var system = new PlayerLoopSystem()
-          { type = typeof(FpsCapperSystem),
-            updateDelegate = UpdateSystem };
-
-        // Custom system insertion
-        var playerLoop = PlayerLoop.GetCurrentPlayerLoop();
-
-        for (var i = 0; i < playerLoop.subSystemList.Length; i++)
-        {
-            ref var phase = ref playerLoop.subSystemList[i];
-            if (phase.type == typeof(UnityEngine.PlayerLoop.EarlyUpdate))
-            {
-                phase.subSystemList
-                  = phase.subSystemList.Concat(new[]{system}).ToArray();
-                break;
-            }
-        }
-
-        PlayerLoop.SetPlayerLoop(playerLoop);
+        // Custom subsystem installation
+        PlayerLoopHelper.AddToSubSystem
+          <UnityEngine.PlayerLoop.EarlyUpdate, FpsCapperSystem>
+          (UpdateSystem);
     }
 }
 

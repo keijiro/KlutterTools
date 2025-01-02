@@ -50,9 +50,7 @@ public static class VfxGraphExtraPreference
 class VfxGraphExtraPreferenceProvider : SettingsProvider
 {
     public VfxGraphExtraPreferenceProvider()
-      : base("Preferences/Visual Effects Extra", SettingsScope.User)
-    {
-    }
+      : base("Preferences/Visual Effects Extra", SettingsScope.User) {}
 
     public override void OnGUI(string search)
     {
