@@ -1,0 +1,14 @@
+{
+  "name": "jp.keijiro.klutter-tools",
+  "displayName": "Klutter Tools",
+  "description": "Miscellaneous editor tools.",
+  "author": "Keijiro Takahashi",
+  "license": "Unlicense",
+  "dependencies": { },
+  "version": "1.0.0",
+  "unity": "6000.0",
+  "keywords": [ "unity" ]
+}
+
+
+

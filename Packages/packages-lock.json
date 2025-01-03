@@ -141,6 +141,12 @@
         "com.unity.render-pipelines.core": "17.0.3"
       }
     },
+    "jp.keijiro.klutter-tools": {
+      "version": "file:jp.keijiro.kluttertools",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.modules.imgui": {
       "version": "1.0.0",
       "depth": 3,
