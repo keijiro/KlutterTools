@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-namespace Klak.EditorTools {
+namespace Klak.KlutterTools {
 
 [InitializeOnLoad]
 public static class VfxGraphZoomStepModifier
@@ -40,4 +40,4 @@ public static class VfxGraphZoomStepModifier
     }
 }
 
-} // namespace Klak.EditorTools 
+} // namespace Klak.KlutterTools 

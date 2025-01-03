@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
-namespace Klak.EditorTools {
+namespace Klak.KlutterTools {
 
 [ScriptedImporter(0, "cube")]
 class CubeLutImporter : ScriptedImporter
@@ -56,4 +56,4 @@ class CubeLutImporter : ScriptedImporter
     #endregion
 }
 
-} // namespace Klak.EditorTools 
+} // namespace Klak.KlutterTools 
