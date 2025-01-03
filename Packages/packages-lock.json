@@ -142,7 +142,7 @@
       }
     },
     "jp.keijiro.klutter-tools": {
-      "version": "file:jp.keijiro.kluttertools",
+      "version": "file:jp.keijiro.klutter-tools",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
