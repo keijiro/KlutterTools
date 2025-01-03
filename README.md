@@ -28,3 +28,16 @@ difficult.
 Adds support for importing `.cube` LUT (Look-Up Table) files, commonly used in
 video editing software. While this feature is natively available in HDRP, it’s
 beneficial for users who want to use it in URP.
+
+## System Requirements
+
+- Unity 6 or later
+
+## How to Install
+
+The Klutter Tools package (`jp.keijiro.klutter-tools`) can be installed via the
+"Keijiro" scoped registry using Package Manager. To add the registry to your
+project, please follow [these instructions].
+
+[these instructions]:
+  https://gist.github.com/keijiro/f8c7e8ff29bfe63d86b888901b82644c
