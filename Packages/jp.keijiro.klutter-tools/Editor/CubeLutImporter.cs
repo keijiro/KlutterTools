@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace Klak.KlutterTools {
 
+#if !KLUTTER_TOOLS_HAS_HDRP
+
 [ScriptedImporter(0, "cube")]
 class CubeLutImporter : ScriptedImporter
 {
@@ -55,5 +57,7 @@ class CubeLutImporter : ScriptedImporter
 
     #endregion
 }
+
+#endif
 
 } // namespace Klak.KlutterTools 
