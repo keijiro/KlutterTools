@@ -4,6 +4,8 @@ using UnityEditor;
 
 namespace Klak.KlutterTools {
 
+#if KLUTTER_TOOLS_HAS_VFXGRAPH
+
 [InitializeOnLoad]
 public static class VfxGraphZoomStepModifier
 {
@@ -39,5 +41,7 @@ public static class VfxGraphZoomStepModifier
         setupZoomMethod.Invoke(graphView, args);
     }
 }
+
+#endif
 
 } // namespace Klak.KlutterTools 
