@@ -1,7 +1,7 @@
 using System;
 using UnityEngine.LowLevel;
 
-namespace Klak.KlutterTools {
+namespace KlutterTools {
 
 public static class PlayerLoopHelper
 {
@@ -31,4 +31,4 @@ public static class PlayerLoopHelper
     }
 }
 
-} // namespace Klak.KlutterTools 
+} // namespace KlutterTools

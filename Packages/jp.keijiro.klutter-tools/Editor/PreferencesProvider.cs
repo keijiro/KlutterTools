@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Klak.KlutterTools {
+namespace KlutterTools {
 
 // Preference accessor
 public static class Preferences
@@ -22,13 +22,13 @@ public static class Preferences
     static class Keys
     {
         public const string FpsCapperEnable
-          = "Klak.KlutterTools.FpsCapper.Enable";
+          = "KlutterTools.FpsCapper.Enable";
 
         public const string FpsCapperFrameRate
-          = "Klak.KlutterTools.FpsCapper.FrameRate";
+          = "KlutterTools.FpsCapper.FrameRate";
 
         public const string VfxGraphZoomStep
-          = "Klak.KlutterTools.VfxGraph.ZoomStep";
+          = "KlutterTools.VfxGraph.ZoomStep";
     }
 }
 
@@ -80,4 +80,4 @@ public sealed class PreferencesProvider : SettingsProvider
       => new PreferencesProvider();
 }
 
-} // namespace Klak.KlutterTools 
+} // namespace KlutterTools

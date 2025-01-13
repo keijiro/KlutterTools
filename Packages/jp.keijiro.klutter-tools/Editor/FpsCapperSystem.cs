@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Threading;
 
-namespace Klak.KlutterTools {
+namespace KlutterTools {
 
 // FPS Capper player loop sub system
 [InitializeOnLoad]
@@ -53,4 +53,4 @@ sealed class FpsCapperSystem
     }
 }
 
-} // namespace Klak.KlutterTools 
+} // namespace KlutterTools

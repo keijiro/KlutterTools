@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-namespace Klak.KlutterTools {
+namespace KlutterTools {
 
 #if KLUTTER_TOOLS_HAS_VFXGRAPH
 
@@ -44,4 +44,4 @@ public static class VfxGraphZoomStepModifier
 
 #endif
 
-} // namespace Klak.KlutterTools 
+} // namespace KlutterTools

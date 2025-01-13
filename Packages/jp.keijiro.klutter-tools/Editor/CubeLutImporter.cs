@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
-namespace Klak.KlutterTools {
+namespace KlutterTools {
 
 #if !KLUTTER_TOOLS_HAS_HDRP
 
@@ -60,4 +60,4 @@ class CubeLutImporter : ScriptedImporter
 
 #endif
 
-} // namespace Klak.KlutterTools 
+} // namespace KlutterTools
