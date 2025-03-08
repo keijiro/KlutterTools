@@ -44,8 +44,11 @@ public struct AutoProperty
         var autoProps = allFields.Where(f => f.FieldType == typeof(AutoProperty));
 
         foreach (var f in autoProps)
-            f.SetValue(target, new AutoProperty(FindProperty(so, f.Name)));
+            f.SetValue(target, new AutoProperty(FindProperty(so, ResolveNesting(f.Name))));
     }
+
+    static string ResolveNesting(string name)
+      => name.Replace("__", ".");
 
     static string GetPropNameBacking(string name)
       => $"<{name}>k__BackingField";
