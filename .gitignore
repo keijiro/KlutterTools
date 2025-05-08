@@ -7,4 +7,15 @@ Desktop.ini
 /Logs
 /Recordings
 /Temp
+/UIElementsSchema
 /UserSettings
+
+/.utmp
+/mono_crash.*.json
+/Xcode
+/Web
+
+/*.app
+/*.exe
+/*.apk
+/*_DoNotShip

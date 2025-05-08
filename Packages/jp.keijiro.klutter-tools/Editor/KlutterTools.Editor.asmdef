@@ -1,7 +1,9 @@
 {
     "name": "KlutterTools.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:606dc61d41d874577bdfdc9a83bcb696"
+    ],
     "includePlatforms": [
         "Editor"
     ],

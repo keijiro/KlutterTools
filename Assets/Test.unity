@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1797970487}
   - component: {fileID: 1797970486}
+  - component: {fileID: 1797970488}
+  - component: {fileID: 1797970489}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -167,6 +169,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797970488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797970485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21721932ed30c48dba1da51b0969cfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _noteText: '<color=black><size=18><b>Test Text</b></size>
+
+
+    <size=15>Lorem
+    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+    Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.</size>'
+  _showEditor: 0
+  _backgroundColor: {r: 0.8867924, g: 0.8471814, b: 0.38065147, a: 1}
+--- !u!114 &1797970489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797970485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21721932ed30c48dba1da51b0969cfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _noteText: To edit the note, select "Toggle Note Editor" from the inspector context
+    menu.
+  _showEditor: 0
+  _backgroundColor: {r: 0.15, g: 0.15, b: 0.15, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
