@@ -10,16 +10,17 @@ public sealed class InspectorNote : MonoBehaviour
 #pragma warning disable CS0414
 
     [SerializeField] string _noteText =
-      "To edit the note, select \"Toggle Note Editor\" from the inspector context menu.";
+      "To edit the note, select \"Edit Note\" from the context menu.";
 
     [SerializeField] bool _showEditor = false;
 
-    [SerializeField] Color _backgroundColor = new Color(0.15f, 0.15f, 0.15f, 1);
+    [SerializeField] Color _textColor = new Color32(210, 210, 210, 255);
+    [SerializeField] Color _backgroundColor = new Color32(38, 38, 38, 255);
 
 #pragma warning restore CS0414
 
-    [ContextMenu("Toggle Note Editor")]
-    void ToggleNoteEditor() => _showEditor = !_showEditor;
+    [ContextMenu("Edit Note")]
+    void ShowNoteEditor() => _showEditor = true;
 
 #endif
 }
