@@ -23,7 +23,8 @@ public static class VfxGraphTextEditorModifier
     }
 
     static void OnWindowFocusChanged()
-      => CheckAndApplyCustomFont(EditorWindow.focusedWindow);
+      => EditorApplication.delayCall += () =>
+           { CheckAndApplyCustomFont(EditorWindow.focusedWindow); };
 
     #endregion
 
