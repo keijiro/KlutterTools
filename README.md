@@ -23,6 +23,11 @@ in the VFX Graph Editor. It's especially helpful for Mac users with a trackpad,
 where scroll gestures can feel overly sensitive and make precise editing
 difficult.
 
+### Fixed-pitch font in VFX Graph Text Editor
+
+When enabled, this feature switches the font used in the VFX Graph text editor
+(custom HLSL code) to a fixed-pitch typeface and lets you adjust the font size.
+
 ### .cube LUT file import
 
 Adds support for importing `.cube` LUT (Look-Up Table) files, commonly used in

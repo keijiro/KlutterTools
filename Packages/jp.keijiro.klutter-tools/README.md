@@ -1,6 +1,6 @@
 # Klutter Tools
 
-![screenshot](https://github.com/user-attachments/assets/1e2284cd-ea4a-400e-958c-00feb970e180)
+![Screenshot](https://github.com/user-attachments/assets/6d8d9604-6a8e-49a9-8676-1bc9190bd550)
 
 **Klutter Tools** is a collection of Unity Editor extensions offering various
 utilities to enhance the editor workflow.
@@ -23,11 +23,23 @@ in the VFX Graph Editor. It's especially helpful for Mac users with a trackpad,
 where scroll gestures can feel overly sensitive and make precise editing
 difficult.
 
+### Fixed-pitch font in VFX Graph Text Editor
+
+When enabled, this feature switches the font used in the VFX Graph text editor
+(custom HLSL code) to a fixed-pitch typeface and lets you adjust the font size.
+
 ### .cube LUT file import
 
 Adds support for importing `.cube` LUT (Look-Up Table) files, commonly used in
 video editing software. While this feature is natively available in HDRP, it’s
 beneficial for users who want to use it in URP.
+
+### Inspector Note
+
+**Inspector Note** is an editor-only component that allows attaching comments
+or notes directly to GameObjects in the Inspector. This can be useful for
+leaving reminders, instructions, or context for other developers -- or just
+jotting down your own thoughts.
 
 ## System Requirements
 
