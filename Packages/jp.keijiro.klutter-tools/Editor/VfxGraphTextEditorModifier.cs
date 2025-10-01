@@ -1,0 +1,76 @@
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace KlutterTools {
+
+#if KLUTTER_TOOLS_HAS_VFXGRAPH
+
+[InitializeOnLoad]
+public static class VfxGraphTextEditorModifier
+{
+    #region Constructor and event handlers
+
+    static VfxGraphTextEditorModifier()
+    {
+        // Subscribe to window focus change events
+        EditorWindow.windowFocusChanged += OnWindowFocusChanged;
+
+        // Double delayCall to wait for VFXTextEditor UI to be fully constructed after domain reload
+        EditorApplication.delayCall += () => {
+            EditorApplication.delayCall += () => { ApplyToAllOpenWindows(); };
+        };
+    }
+
+    static void OnWindowFocusChanged()
+      => CheckAndApplyCustomFont(EditorWindow.focusedWindow);
+
+    #endregion
+
+    #region Public methods
+
+    public static void ApplyToAllOpenWindows()
+    {
+        foreach (var window in Resources.FindObjectsOfTypeAll<EditorWindow>())
+            CheckAndApplyCustomFont(window);
+    }
+
+    #endregion
+
+    #region Font application logic
+
+    static readonly string TextClassName
+      = "unity-text-element--inner-input-field-component";
+
+    static Font _font;
+
+    static bool CheckWindowType(EditorWindow window)
+        => window?.GetType()?.Name == "VFXTextEditor";
+
+    static void ApplyCustomFont(EditorWindow window)
+    {
+        if (!Preferences.VfxGraphChangeFont) return;
+
+        var element = window.rootVisualElement.Q(className: TextClassName);
+        if (element == null) return;
+
+        if (_font == null)
+            _font = Font.CreateDynamicFontFromOSFont
+              (new[]{"Courier New"}, Preferences.VfxGraphFontSize);
+
+        element.style.unityFontDefinition = StyleKeyword.None;
+        element.style.unityFont = new StyleFont(_font);
+        element.style.fontSize = Preferences.VfxGraphFontSize;
+    }
+
+    static void CheckAndApplyCustomFont(EditorWindow window)
+    {
+        if (CheckWindowType(window)) ApplyCustomFont(window);
+    }
+
+    #endregion
+}
+
+#endif
+
+} // namespace KlutterTools

@@ -12,7 +12,7 @@ public static class VfxGraphZoomStepModifier
     static VfxGraphZoomStepModifier()
       => EditorWindow.windowFocusChanged += OnWindowFocusChanged;
 
-    public static void OnWindowFocusChanged()
+    static void OnWindowFocusChanged()
     {
         var target = EditorWindow.focusedWindow;
 
