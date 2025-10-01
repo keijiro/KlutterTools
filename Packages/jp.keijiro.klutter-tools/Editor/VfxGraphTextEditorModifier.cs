@@ -52,16 +52,22 @@ public static class VfxGraphTextEditorModifier
     {
         if (!Preferences.VfxGraphChangeFont) return;
 
-        var element = window.rootVisualElement.Q(className: TextClassName);
-        if (element == null) return;
+        var root = window.rootVisualElement;
+        var elements = root.Query(className: TextClassName).ToList();
+        if (elements.Count == 0) return;
 
         if (_font == null)
             _font = Font.CreateDynamicFontFromOSFont
               (new[]{"Courier New"}, Preferences.VfxGraphFontSize);
 
-        element.style.unityFontDefinition = StyleKeyword.None;
-        element.style.unityFont = new StyleFont(_font);
-        element.style.fontSize = Preferences.VfxGraphFontSize;
+        var unityFont = new StyleFont(_font);
+
+        foreach (var element in elements)
+        {
+            element.style.unityFontDefinition = StyleKeyword.None;
+            element.style.unityFont = unityFont;
+            element.style.fontSize = Preferences.VfxGraphFontSize;
+        }
     }
 
     static void CheckAndApplyCustomFont(EditorWindow window)
