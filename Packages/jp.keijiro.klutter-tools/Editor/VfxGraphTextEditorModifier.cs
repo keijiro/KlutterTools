@@ -40,8 +40,7 @@ public static class VfxGraphTextEditorModifier
 
     #region Font application logic
 
-    static readonly string TextClassName
-      = "unity-text-element--inner-input-field-component";
+    static readonly string TextClassName = "unity-text-field__input";
 
     static Font _font;
 
@@ -67,6 +66,7 @@ public static class VfxGraphTextEditorModifier
             element.style.unityFontDefinition = StyleKeyword.None;
             element.style.unityFont = unityFont;
             element.style.fontSize = Preferences.VfxGraphFontSize;
+            element.style.whiteSpace = WhiteSpace.Normal;
         }
     }
 
