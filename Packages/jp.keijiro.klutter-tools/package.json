@@ -5,7 +5,7 @@
   "author": "Keijiro Takahashi",
   "license": "Unlicense",
   "dependencies": { },
-  "version": "2.4.2",
+  "version": "2.4.3",
   "unity": "6000.0",
   "keywords": [ "unity" ]
 }
