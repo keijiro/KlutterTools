@@ -78,6 +78,13 @@ public static class VfxGraphTextEditorModifier
     #endregion
 }
 
+#else
+
+public static class VfxGraphTextEditorModifier
+{
+    public static void ApplyToAllOpenWindows() {}
+}
+
 #endif
 
 } // namespace KlutterTools
