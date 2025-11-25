@@ -1,14 +1,16 @@
 {
   "name": "jp.keijiro.klutter-tools",
+  "version": "2.4.3",
   "displayName": "Klutter Tools",
   "description": "Miscellaneous editor tools.",
-  "author": "Keijiro Takahashi",
-  "license": "Unlicense",
-  "dependencies": { },
-  "version": "2.4.3",
   "unity": "6000.0",
-  "keywords": [ "unity" ]
+  "author": "Keijiro Takahashi",
+  "dependencies": { },
+  "changelogUrl": "https://github.com/keijiro/KlutterTools/blob/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/keijiro/KlutterTools",
+  "licensesUrl": "https://github.com/keijiro/KlutterTools/blob/main/LICENSE",
+  "license": "Unlicense",
+  "_upm": { "changelog": "" }
 }
-
 
 
