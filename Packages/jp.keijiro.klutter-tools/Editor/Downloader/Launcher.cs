@@ -18,8 +18,8 @@ static class Launcher
         // All files downloaded check
         if (GlobalManifest.Instance.CheckAllDownloaded()) return;
 
-        // Missing entry window open
-        EditorApplication.delayCall += MissingEntryWindow.ShowWindow;
+        // Downloader window open
+        EditorApplication.delayCall += DownloaderWindow.ShowWindow;
     }
 }
 

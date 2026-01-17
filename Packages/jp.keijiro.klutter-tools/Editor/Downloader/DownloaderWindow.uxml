@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <ui:VisualElement name="root-container" style="margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;">
         <ui:Label text="Some files are missing:" name="caption-label" style="margin-bottom: 8px; white-space: normal;"/>
-        <ui:ListView item-template="project://database/Packages/jp.keijiro.klutter-tools/Editor/Downloader/MissingEntry.uxml?fileID=9197481963319205126&amp;guid=e5fb5605902c247d8b81f9a365e2b6e4&amp;type=3#MissingEntry" binding-source-selection-mode="AutoAssign" name="entry-list"/>
+        <ui:ListView item-template="project://database/Packages/jp.keijiro.klutter-tools/Editor/Downloader/FileEntry.uxml?fileID=9197481963319205126&amp;guid=e5fb5605902c247d8b81f9a365e2b6e4&amp;type=3#FileEntry" binding-source-selection-mode="AutoAssign" name="entry-list"/>
     </ui:VisualElement>
 </ui:UXML>

@@ -5,14 +5,14 @@ using UnityEngine.UIElements;
 
 namespace KlutterTools.Downloader {
 
-sealed class MissingEntryWindow : EditorWindow
+sealed class DownloaderWindow : EditorWindow
 {
     static readonly string UxmlPath =
-      "Packages/jp.keijiro.klutter-tools/Editor/Downloader/MissingEntryWindow.uxml";
+      "Packages/jp.keijiro.klutter-tools/Editor/Downloader/DownloaderWindow.uxml";
 
     public static void ShowWindow()
     {
-        var window = GetWindow<MissingEntryWindow>(true, "Missing Files");
+        var window = GetWindow<DownloaderWindow>(true, "Downloader");
         window.minSize = new Vector2(400, 200);
         window.Show();
     }

@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement name="file-entry" data-source-type="KlutterTools.Downloader.FileEntry, Assembly-CSharp-Editor" style="flex-direction: row; align-items: center;">
+    <ui:VisualElement name="file-entry" data-source-type="KlutterTools.Downloader.FileEntry, KlutterTools.Editor" style="flex-direction: row; align-items: center;">
         <ui:Label text="TestFile.dat" name="filename-label" style="flex-grow: 1;">
             <Bindings>
                 <ui:DataBinding property="text" data-source-path="Filename" binding-mode="ToTarget"/>
