@@ -23,6 +23,10 @@ sealed class MissingEntryWindow : EditorWindow
         var uxml = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(UxmlPath);
         var doc = uxml.CloneTree();
 
+        // Caption text
+        var caption = doc.Q<Label>("caption-label");
+        caption.text = GlobalManifest.Instance.Caption;
+
         // List view setup
         var list = doc.Q<ListView>("entry-list");
         list.bindItem = BindItem;

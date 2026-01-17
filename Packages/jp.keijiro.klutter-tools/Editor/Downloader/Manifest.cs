@@ -9,6 +9,9 @@ public sealed class Manifest : ScriptableObject
     // Editable attributes
 
     [field:SerializeField]
+    public string Caption { get; private set; } = "Some files are missing:";
+
+    [field:SerializeField]
     public FileEntry[] FileEntries { get; private set; }
 
     // Public methods

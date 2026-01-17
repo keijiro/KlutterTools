@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5acc6266be6eb4130afc5134ec35fcec, type: 3}
   m_Name: TestDataManifest
   m_EditorClassIdentifier: Assembly-CSharp-Editor::TestDataDownloader.Dataset
+  <Caption>k__BackingField: <b>Some test .svg files are missing:</b><br>Lorem ipsum
+    dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+    mollit anim id est laborum.
   <FileEntries>k__BackingField:
   - <SourceUrl>k__BackingField: https://commons.wikimedia.org/static/images/icons/commonswiki.svg
     <Destination>k__BackingField: Assets/StreamingAssets
