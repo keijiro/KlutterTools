@@ -20,3 +20,6 @@ Desktop.ini
 /*.apk
 /*_DoNotShip
 /*.tgz
+
+/Assets/StreamingAssets/*.svg
+/Assets/StreamingAssets/*.svg.meta

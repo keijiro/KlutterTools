@@ -1,0 +1,15 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="file-entry" data-source-type="KlutterTools.Downloader.FileEntry, Assembly-CSharp-Editor" style="flex-direction: row; align-items: center;">
+        <ui:Label text="TestFile.dat" name="filename-label" style="flex-grow: 1;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="Filename" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label name="state-label" text="Missing" style="color: rgb(147, 147, 147); -unity-font-style: italic;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="CurrentState" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Button text="Download" name="download-button"/>
+    </ui:VisualElement>
+</ui:UXML>
