@@ -1,6 +1,6 @@
 {
   "name": "jp.keijiro.klutter-tools",
-  "version": "2.4.4",
+  "version": "2.5.0",
   "displayName": "Klutter Tools",
   "description": "Miscellaneous editor tools.",
   "unity": "6000.0",
@@ -10,6 +10,5 @@
   "documentationUrl": "https://github.com/keijiro/KlutterTools",
   "licensesUrl": "https://github.com/keijiro/KlutterTools/blob/main/LICENSE",
   "license": "Unlicense",
-  "_upm": { "changelog": "<b>Added</b><br>- Added signing for Unity 6.3." }
+  "_upm": { "changelog": "<b>Added</b><br>- Added the Downloader tool for fetching large external assets." }
 }
-
