@@ -41,6 +41,12 @@ or notes directly to GameObjects in the Inspector. This can be useful for
 leaving reminders, instructions, or context for other developers -- or just
 jotting down your own thoughts.
 
+### Downloader
+
+**Downloader** is a tool for fetching additional data from the web. It's
+useful when a project needs large assets, such as uncompressed video files or
+large machine learning models.
+
 ## System Requirements
 
 - Unity 6 or later
