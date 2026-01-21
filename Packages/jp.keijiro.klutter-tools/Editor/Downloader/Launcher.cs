@@ -10,7 +10,6 @@ static class Launcher
         // Session state check
         const string sessionKey = "KlutterTools.Downloader.Shown";
         if (SessionState.GetBool(sessionKey, false)) return;
-        SessionState.SetBool(sessionKey, true);
 
         // Manifest existence check
         if (GlobalManifest.Instance == null) return;
@@ -20,6 +19,7 @@ static class Launcher
 
         // Downloader window open
         EditorApplication.delayCall += DownloaderWindow.ShowWindow;
+        SessionState.SetBool(sessionKey, true);
     }
 }
 
