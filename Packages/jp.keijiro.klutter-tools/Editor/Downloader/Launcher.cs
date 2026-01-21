@@ -6,6 +6,9 @@ namespace KlutterTools.Downloader {
 static class Launcher
 {
     static Launcher()
+      => EditorApplication.delayCall += CheckAndShow;
+
+    static void CheckAndShow()
     {
         // Session state check
         const string sessionKey = "KlutterTools.Downloader.Shown";
@@ -18,7 +21,7 @@ static class Launcher
         if (GlobalManifest.Instance.CheckAllDownloaded()) return;
 
         // Downloader window open
-        EditorApplication.delayCall += DownloaderWindow.ShowWindow;
+        DownloaderWindow.ShowWindow();
         SessionState.SetBool(sessionKey, true);
     }
 }
