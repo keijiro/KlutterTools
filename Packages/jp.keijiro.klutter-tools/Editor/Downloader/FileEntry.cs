@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -53,7 +52,7 @@ public sealed class FileEntry
     }
 
     // Asynchronous file download method
-    public async Task<bool> DownloadAsync()
+    public async Awaitable<bool> DownloadAsync()
     {
         var destPath = DestinationPath;
         var tempPath = TemporaryPath;

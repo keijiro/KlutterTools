@@ -32,7 +32,32 @@ sealed class DownloaderWindow : EditorWindow
         list.bindItem = BindItem;
         list.itemsSource = GlobalManifest.Instance.FileEntries;
 
+        // Download-all button setup
+        var button = doc.Q<Button>("download-all-button");
+        button.clicked += () => DownloadAllAsync(list, button).Forget();
+
         rootVisualElement.Add(doc);
+    }
+
+    async Awaitable DownloadAllAsync(ListView list, Button button)
+    {
+        button.enabledSelf = false;
+        button.text = "Downloading...";
+        try
+        {
+            foreach (var entry in GlobalManifest.Instance.FileEntries)
+            {
+                if (entry.CurrentState != FileState.Missing) continue;
+                var download = entry.DownloadAsync();
+                list.Rebuild(); // To disable download button
+                await download;
+            }
+            AssetDatabase.Refresh();
+        }
+        finally
+        {
+            button.text = "Done";
+        }
     }
 
     // List view item binding
