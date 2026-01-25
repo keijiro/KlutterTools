@@ -49,9 +49,10 @@ sealed class DownloaderWindow : EditorWindow
             {
                 if (entry.CurrentState != FileState.Missing) continue;
                 var download = entry.DownloadAsync();
-                list.Rebuild(); // To disable download button
+                list.RefreshItems(); // To disable download button
                 await download;
             }
+            list.RefreshItems();
             AssetDatabase.Refresh();
         }
         finally
